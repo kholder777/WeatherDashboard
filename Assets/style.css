@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    color: darkturquoise;
+}
+
+.container {
+    background-color: rgb(15, 21, 56);
+    color: rgb(133, 17, 17);
+}
+
+input {
+    background-color: rgb(6, 58, 58);
+    border-color: black;
+    color: rgb(133, 17, 17);
+    justify-items: center;
+}
