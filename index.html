@@ -2,50 +2,80 @@
 DO NOT MODIFY THIS FILE -->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Is Palindrome</title>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/mocha/5.2.0/mocha.min.css"
-		/>
-	</head>
 
-	<body>
-		<div class="container">
-			<h1>city Search</h1>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Is Palindrome</title>
+	<link rel="stylesheet" href="assets/reset.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/5.2.0/mocha.min.css" />
+	<link rel="stylesheet" href="./Assets/style.css" />
+</head>
 
-			<!-- City search Buttons will get Dumped Here  -->
+<body>
+	<div class="container">
+		<h1>city Search</h1>
+		<!-- City search Buttons will get Dumped Here  -->
+		<div id="buttons-view"></div>
+		<form id="city-name">
+			<input type="text" id="city-input" value="CITY" />
+			<!-- Button triggers new city to be added -->
+			<input id="add-city" type="submit" value="Search" />
+		</form>
 
-			<div id="buttons-view"></div>
-
-			<form id="city-name">
-				<label for="city-input">Search for your City!</label>
-				<input type="text" id="city-input" />
-				<br />
-
-				<!-- Button triggers new city to be added -->
-				<input id="add-city" type="submit" value="Search for your City!" />
-			</form>
-
-			<!-- cities will Get Dumped Here -->
-			<!-- Retrieved data will be dumped here -->
-			<div class="city"></div>
-			<div class="wind"></div>
-			<div class="humidity"></div>
-			<div class="temp"></div>
-			<div class="tempF"></div>
-			<div id="cities-view"></div>
-		</div>
+		<!-- cities will Get Dumped Here -->
 		<!-- display current city, container  -->
-		<!-- add uv index to current city info -->
+		<div class="row">
+			<div id="cityForecast" class="col">
+				<h2><span id="city"></span> <span id="date"></span></h2>
+				<img id="weatherIcon" />
+				<p>Temperature: <span id="temperature"></span></p>
+				<p>Humidity: <span id="humidity"></span></p>
+				<p>Wind Speed: <span id="windSpeed"></span></p>
+				<!-- add uv index to current city info -->
+				<p>UV Index: <span id="uvIndex"></span></p>
+			</div>
+		</div>
+	</div>
 
-		<!-- display 5 day forecast row  -->
+	<!-- display 5 day forecast row  -->
+	<div id="fiveDayForecast" class="row">
+		<div class="col" id="dayOne">
+			<h3><span id="dayOneDate"></span></h3>
+			<img id="dayOneIcon" />
+			<p><span id="dayOneTemp"></span></p>
+			<p><span id="dayOneHumidity"></span></p>
+		</div>
+		<div class="col" id="dayTwo">
+			<h3><span id="dayTwoDate"></span></h3>
+			<img id="dayTwoIcon" />
+			<p><span id="dayTwoTemp"></span></p>
+			<p><span id="dayTwoHumidity"></span></p>
+		</div>
+		<div class="col" id="dayThree">
+			<h3><span id="dayThreeDate"></span></h3>
+			<img id="dayThreeIcon" />
+			<p><span id="dayThreeTemp"></span></p>
+			<p><span id="dayThreeHumidity"></span></p>
+		</div>
+		<div class="col" id="dayFour">
+			<h3><span id="dayFourDate"></span></h3>
+			<img id="dayFourIcon" />
+			<p><span id="dayFourTemp"></span></p>
+			<p><span id="dayFourHumidity"></span></p>
+		</div>
+		<div class="col" id="dayFive">
+			<h3><span id="dayFiveDate"></span></h3>
+			<img id="dayFiveIcon" />
+			<p><span id="dayFiveTemp"></span></p>
+			<p><span id="dayFiveHumidity"></span></p>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="./Assets/index.js"></script>
+</body>
 
-		<script src="./Assets/index.js"></script>
-	</body>
 </html>
