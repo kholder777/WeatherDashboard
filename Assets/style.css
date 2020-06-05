@@ -1,16 +1,49 @@
-body {
-    background-color: black;
-    color: darkturquoise;
+html,
+body,
+#forecast {
+    background: rgb(49, 49, 49);
+    text-emphasis-color: red;
+    color: lavender;
+    height: 100%;
+    width: 100%;
+}
+
+h1,
+h4,
+p,
+.ml-2 {
+    text-align: center;
+}
+
+.forecastBody,
+.p-3,
+.text-black {
+    border: 0rem !important;
+    padding: 0rem !important;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    text-align: center;
 }
 
 .container {
-    background-color: rgb(15, 21, 56);
-    color: rgb(133, 17, 17);
+    background-color: rgb(105, 30, 11);
+    color: black;
+    border-radius: 0.5rem;
+    padding: 2%;
 }
 
-input {
-    background-color: rgb(6, 58, 58);
-    border-color: black;
-    color: rgb(133, 17, 17);
-    justify-items: center;
+.card {
+    background-color: rgb(2, 92, 92);
+    color: rgb(255, 255, 255);
+    border-radius: 0.5rem;
+}
+
+.form-control {
+    background-color: black;
+    color: white;
+    font-weight: 800;
+}
+
+.pl-2 {
+    border: 5px;
 }

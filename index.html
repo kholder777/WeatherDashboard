@@ -1,81 +1,98 @@
-<!-- OPEN THIS FILE IN YOUR WEB BROWSER TO SEE THE TEST RESULTS
-DO NOT MODIFY THIS FILE -->
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<!-- reset css -->
+		<link rel="stylesheet" href="./Assets/reset.css" />
+		<!-- Bootstrap Link-->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+		<!-- icon -->
+		<link
+			rel="shortcut icon"
+			href="https://img.favpng.com/1/11/10/weather-map-computer-icons-weather-forecasting-png-favpng-iwuq3Sqj0gtVPXYU9MHAsij6S.jpg"
+		/>
+		<link rel="stylesheet" href="./Assets/style.css" />
+		<!-- My style sheet -->
+		<title>Weather Dashboard</title>
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>Is Palindrome</title>
-	<link rel="stylesheet" href="assets/reset.css" />
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/5.2.0/mocha.min.css" />
-	<link rel="stylesheet" href="./Assets/style.css" />
-</head>
+	<body>
+		<!-- Main heading -->
+		<header>
+			<div class="container-fluid">
+				<h1>Weather Dashboard</h1>
 
-<body>
-	<div class="container">
-		<h1>city Search</h1>
-		<!-- City search Buttons will get Dumped Here  -->
-		<div id="buttons-view"></div>
-		<form id="city-name">
-			<input type="text" id="city-input" value="CITY" />
-			<!-- Button triggers new city to be added -->
-			<input id="add-city" type="submit" value="Search" />
-		</form>
+				<p id="currentDay"></p>
+				<p id="currentTime"></p>
+			</div>
+		</header>
+		<!-- End Main heading -->
 
-		<!-- cities will Get Dumped Here -->
-		<!-- display current city, container  -->
-		<div class="row">
-			<div id="cityForecast" class="col">
-				<h2><span id="city"></span> <span id="date"></span></h2>
-				<img id="weatherIcon" />
-				<p>Temperature: <span id="temperature"></span></p>
-				<p>Humidity: <span id="humidity"></span></p>
-				<p>Wind Speed: <span id="windSpeed"></span></p>
-				<!-- add uv index to current city info -->
-				<p>UV Index: <span id="uvIndex"></span></p>
+		<!-- Start container -->
+		<div class="container">
+			<!-- Start row -->
+			<div class="row">
+				<!-- Start column -->
+				<embed class="col-lg-3 bg-light pt-3 pb-3 mx-auto" />
+				<!-- Start input group -->
+				<div class="input-group mb-3">
+					<input
+						id="searchCity"
+						type="text"
+						class="form-control mt-3"
+						placeholder="Enter CITY for search"
+						class="input-group-append"
+					/>
+					<button
+						id="searchBtn"
+						class="btn btn-primary mt-3"
+						type="button"
+						id="button-addon2"
+					>
+						Search
+						<i class="far fa-search"></i>
+					</button>
+				</div>
+				<!-- End input group -->
+			</div>
+			<!-- Current Weather Card -->
+			<div class="d-flex">
+				<!-- Start column -->
+				<div class="col-sm-9">
+					<div id="currentCity"></div>
+				</div>
+				<!-- End card -->
+
+				<!-- History Card -->
+				<div class="card d-flex col-sm-3">
+					<strong>RECENT CITIES</strong>
+					<ul id="cityList" class="list-group list-group-flush list"></ul>
+				</div>
+				<!-- End card -->
 			</div>
 		</div>
-	</div>
 
-	<!-- display 5 day forecast row  -->
-	<div id="fiveDayForecast" class="row">
-		<div class="col" id="dayOne">
-			<h3><span id="dayOneDate"></span></h3>
-			<img id="dayOneIcon" />
-			<p><span id="dayOneTemp"></span></p>
-			<p><span id="dayOneHumidity"></span></p>
-		</div>
-		<div class="col" id="dayTwo">
-			<h3><span id="dayTwoDate"></span></h3>
-			<img id="dayTwoIcon" />
-			<p><span id="dayTwoTemp"></span></p>
-			<p><span id="dayTwoHumidity"></span></p>
-		</div>
-		<div class="col" id="dayThree">
-			<h3><span id="dayThreeDate"></span></h3>
-			<img id="dayThreeIcon" />
-			<p><span id="dayThreeTemp"></span></p>
-			<p><span id="dayThreeHumidity"></span></p>
-		</div>
-		<div class="col" id="dayFour">
-			<h3><span id="dayFourDate"></span></h3>
-			<img id="dayFourIcon" />
-			<p><span id="dayFourTemp"></span></p>
-			<p><span id="dayFourHumidity"></span></p>
-		</div>
-		<div class="col" id="dayFive">
-			<h3><span id="dayFiveDate"></span></h3>
-			<img id="dayFiveIcon" />
-			<p><span id="dayFiveTemp"></span></p>
-			<p><span id="dayFiveHumidity"></span></p>
-		</div>
-	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- End Row -->
 
-	<script src="./Assets/index.js"></script>
-</body>
+		<!-- Start forecast container -->
+		<div class="mt-4 col-md-12">
+			<h5 id="forecastH5"></h5>
 
+			<!-- Start row -->
+			<div id="forecast" class="row mb-6"></div>
+			<!-- End row -->
+		</div>
+		<!-- End forecast container -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+		<script src="Assets/index.js"></script>
+	</body>
 </html>
