@@ -96,9 +96,7 @@ $("#searchBtn").on("click", function () {
 			"src",
 			"https://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
 		);
-		const UVIndextxt = $("<p>")
-			.addClass("card-text font-weight-light small")
-			.text("UV Index: 0-4 low(green), 4-7 moderate(yellow), 8-11 high(red)");
+		const UVIndextxt = $("<p>").addClass("card-text font-weight-light small");
 
 		// add to page
 		city.append(cityDate, image);
